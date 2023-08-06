@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  #mongoDB services
+  mongodb:
+    container_name: mongo_db_container
+    ports:
+      - 27017:27017
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongodb:/data/db
+
+  #express API Service
+  api:
+    build: .
+    container_name: forum_container
+    ports:
+      - 3000:3000
+    environment:
+        PORT: 3000
+        MONGODB_URI: mongodb://mongodb:27017/forum
+        DB_NAME: forum_db
+        NAME: ForumDB    
+    depends_on:
+      - mongodb 
+volumes:
+   mongodb: {}
