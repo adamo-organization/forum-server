@@ -19,10 +19,12 @@ services:
       - 3000:3000
     environment:
         PORT: 3000
-        MONGODB_URI: mongodb://mongodb:27017/forum
+        MONGODB_URI: mongodb://mongodb:27017/forumS
         DB_NAME: forum_db
         NAME: ForumDB    
     depends_on:
       - mongodb 
 volumes:
    mongodb: {}
+
+  
