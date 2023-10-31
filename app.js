@@ -96,10 +96,15 @@ router.delete("/id", async (req,res)=>{
     }
 });
 
+process.on("SIGINT", () => {
+    console.log("exiting");
+    process.exit(0);
+});
 
 // connecting to mongodb and listen to changes
 async function main(){
-    await mongoose.connect('mongodb://mongo_db_container:27017/forum');
+    const mongoAddress = process.env["MONGO_ADDR"] ?? "localhost";
+    await mongoose.connect(`mongodb://${mongoAddress}:27017/forum`);
     app.listen(3000, () => console.log("server is up"));
 }
 
