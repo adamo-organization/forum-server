@@ -10,7 +10,9 @@
   "description": "",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^7.4.1"
+    "mongoose": "^7.4.1",
+    "underscore": "1.11.0",
+    "node-fetch": "1.7.3"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
