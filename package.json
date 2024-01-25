@@ -13,7 +13,7 @@
     "mongoose": "^7.4.1",
     "underscore": "1.11.0",
     "node-fetch": "1.7.3",
-    "jszip": "3.6.0
+    "jszip": "3.6.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
